@@ -397,7 +397,6 @@ function init(){
   el('hasta').onchange=()=>{S.hasta=+el('hasta').value;if(S.hasta<S.desde){S.desde=S.hasta;el('desde').value=S.desde;}S.mes=null;render();};
   el('rol').onchange=()=>{S.rol=el('rol').value;render();};
   el('limpiar').onclick=()=>{S.desde=1;S.hasta=NM;S.tipos=new Set([0,1,2]);S.estados=new Set([0,1,2]);S.mes=null;el('desde').value=1;el('hasta').value=NM;render();};
-  el('foot').innerHTML=`Fuente: capa semántica (<code>dwh_semantico.db</code>) · ${D.generado} · Métricas M01, M03, M06, M07, M10, M12 y M13 del catálogo. Datos de ventas reales; vendedor, tarifas, inventario y compras simulados.`;
   const tip=el('tip');
   document.addEventListener('mousemove',e=>{const t=e.target.closest&&e.target.closest('[data-tip]');if(!t){tip.classList.add('hide');return;}
     tip.textContent=t.dataset.tip;tip.classList.remove('hide');const w=tip.offsetWidth;tip.style.left=Math.min(innerWidth-w-8,e.clientX+14)+'px';tip.style.top=(e.clientY+16)+'px';});
